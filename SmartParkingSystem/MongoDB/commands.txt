@@ -1,0 +1,342 @@
+Git
+
+Username:Srikanth.bolisetty@mastek.com        
+Password:Iotnov2018
+
+
+
+
+
+
+MongoDB
+
+-----------------------------------------------------------------------------------------------------------------
+MongoDB Atlas (prashant.sharma@live.in)
+If you are not running MongoDB 3.6.1+ with TLS/SSL, click below to download the latest Mongo Shell:
+https://downloads.mongodb.org/win32/mongodb-win32-x86_64-2008plus-ssl-3.6.1-signed.msi
+
+Connect via the Mongo Shell
+mongo "mongodb+srv://cluster0-hfxr5.mongodb.net/test" --authenticationDatabase admin --username admin --password admin
+
+mongo --host 172.16.211.52:27017
+mongo -u prashan11193 -p M0ngo 172.16.211.52/db01
+
+------------------------------------------------------------------------------------------------------------------------
+
+Create Database - db01 for example
+------------------------------------------------------------------------------------------------------------------------
+Create database:
+Syntax: use <database_name>
+Command: show dbs
+Command: db.dropDatabase();
+    
+use db01
+
+
+Create Database users
+------------------------------------------------------------------------------------------------------------------------
+db.dropUser("prashan11193", {w: "majority", wtimeout: 5000})
+db.system.users.find()
+
+db.createUser({user:'db_admin',pwd:'db_admin',roles:["root"]})
+
+mongod –auth –port 27017 –dbpath C:\data\db
+
+db.createUser({
+    user: 'prashan11193',
+    pwd: 'M0ngo',
+    roles: [ "root" ]
+})
+db.createUser({
+    user: 'deepak12913',
+    pwd: 'M0ngo',
+    roles: ["root"]
+})
+
+db.createUser({
+    user: 'sunny13414',
+    pwd: 'M0ngo',
+    roles: ["readWrite", "dbAdmin"]
+})
+
+db.createUser({
+    user: 'pravins',
+    pwd: 'M0ngo',
+    roles: [ "readWrite", "dbAdmin" ]
+})
+
+db.createUser({
+    user: 'vipin',
+    pwd: 'M0ngo',
+    roles: [ "readWrite", "dbAdmin" ]
+})
+
+
+mongo -u prashan11193 -p M0ngo 192.168.15.44/admin
+mongo -u deepak12913 -p M0ngo 192.168.15.44/admin
+
+
+Create collection and insert data
+------------------------------------------------------------------------------------------------------------------------
+Create collection:
+    db.car_park.drop()
+    db.createCollection("car_park")
+    show collections
+
+Insert data in collection:
+    db.car_park.insert({name:"ParkOne Parking Spaces, Chembur"
+                                  , tspaces:200
+                                  , aspaces:70
+                                  , "loc" : { "type" : "Point","coordinates" : [ 19.0693219,72.8915444 ]
+                                            }
+                                   });
+    db.car_park.insert({name:"Atri Mall Parking Space, Worli"
+                                  , tspaces:500
+                                  , aspaces:400
+                                  , "loc" : { "type" : "Point","coordinates" : [ 18.991168, 72.814201 ]
+                                            }
+                                   });
+    db.car_park.insert({name:"Priory Parking Bay, Mahape"
+                                  , tspaces:100
+                                  , aspaces:55
+                                  , "loc" : { "type" : "Point","coordinates" : [ 19.107616, 73.020025 ]
+                                            }
+                                   });
+    db.car_park.insert({name:"Rupa Solitare Parking, Mahape"
+                                  , tspaces:200
+                                  , aspaces:90
+                                  , "loc" : { "type" : "Point","coordinates" : [ 19.111395, 73.016083 ]
+                                            }
+                                   });
+    db.car_park.insert({name:"Orbit Parking, Vashi"
+                                  , tspaces:300
+                                  , aspaces:80
+                                  , "loc" : { "type" : "Point","coordinates" : [ 19.065603, 73.000426 ]
+                                            }
+                                   });
+    db.car_park.insert({name:"Mastek Parking, Mapahe"
+                                  , tspaces:50
+                                  , aspaces:10
+                                  , "loc" : { "type" : "Point","coordinates" : [ 19.111107, 73.016376 ]
+                                            }
+                                   });
+    db.car_park.insert({name:"Majesco Parking, Mahape"
+                                  , tspaces:100
+                                  , aspaces:20
+                                  , "loc" : { "type" : "Point","coordinates" : [ 19.111720, 73.015990 ]
+                                            }
+                                   });
+    db.car_park.find().pretty();
+    
+    
+
+
+Create customer collection and insert data
+------------------------------------------------------------------------------------------------------------------------
+    
+    db.customer.insert({username:"Prashant"
+                        ,first_name:""
+                        ,last_name:""
+                        ,pswd_hash: "c@rpark"
+                        ,pswd_salt:""
+                        ,email: "prashant@gmail.com"
+                        ,phone:123467895
+                        ,photo:""
+                        });
+    db.customer.insert({username:"Vipin"
+                        ,first_name:""
+                        ,last_name:""
+                        ,pswd_hash: "c@rpark"
+                        ,pswd_salt:""
+                        ,email: "vipin@gmail.com"
+                        ,phone:123467895
+                        ,photo:""
+                        });
+    db.customer.insert({username:"Deepak"
+                        ,first_name:""
+                        ,last_name:""
+                        ,pswd_hash: "c@rpark"
+                        ,pswd_salt:""
+                        ,email: "Deepak@gmail.com"
+                        ,phone:123467895
+                        ,photo:""
+                        });    
+    db.customer.insert({username:"Sunny"
+                        ,first_name:""
+                        ,last_name:""
+                        ,pswd_hash: "c@rpark"
+                        ,pswd_salt:""
+                        ,email: "sunny@gmail.com"
+                        ,phone:123467895
+                        ,photo:""
+                        });
+    db.customer.insert({username:"Pravin"
+                        ,first_name:""
+                        ,last_name:""
+                        ,pswd_hash: "c@rpark"
+                        ,pswd_salt:""
+                        ,email: "pravin@gmail.com"
+                        ,phone:123467895
+                        ,photo:""
+                        });
+                        
+db.customer.insert({username:"Santosh"
+                        ,first_name:""
+                        ,last_name:""
+                        ,pswd_hash: "c@rpark"
+                        ,pswd_salt:""
+                        ,email: "santosh@gmail.com"
+                        ,phone:123467895
+                        ,photo:""
+                        });
+    db.customer.find().pretty();
+    
+
+------------------------------------------------------------------------------------------------------------------------
+Parking slot
+    db.slot.insert({car_park_id:"5af30d68cdafc0b5115d574d"
+                    ,cust_id:"5af30dc9cdafc0b5115d5754"
+                    ,vehicle_no:"MH-04-DR-1234"
+                    ,type:"N"
+                    ,loc:""
+    });
+
+    db.slot.insert({car_park_id:"5af30d68cdafc0b5115d574d"
+                    ,cust_id:"5af30dcacdafc0b5115d5755"
+                    ,vehicle_no:"MH-02-AA-1010"
+                    ,type:"N"
+                    ,loc:""
+    });
+    
+------------------------------------------------------------------------------------------------------------------------
+Audit log
+    db.audit_log.insert({car_park_id:"5af30d68cdafc0b5115d574d"
+    ,cust_id:"5af30dc9cdafc0b5115d5754"
+    ,slot_id:"5af4068ecff6a211d9476f3e"
+    ,timestamp:"10-03-18 12:00"
+    ,vehicle_no:"MH-04-DR-1234"
+    ,comments:"IN"
+    });
+    
+    db.audit_log.insert({car_park_id:"5af30d68cdafc0b5115d574d"
+    ,cust_id:"5af30dcacdafc0b5115d5755"
+    ,slot_id:"5af4068ecff6a211d9476f3e"
+    ,timestamp:"10-03-18 12:00"
+    ,vehicle_no:"MH-02-AA-1010"
+    ,comments:"IN"
+    });
+    
+    db.audit_log.insert({car_park_id:"5af30d68cdafc0b5115d574d"
+    ,cust_id:"5af30dcacdafc0b5115d5755"
+    ,slot_id:"5af4068ecff6a211d9476f3e"
+    ,timestamp:"10-03-18 14:00"
+    ,vehicle_no:"MH-02-AA-1010"
+    ,comments:"OUT"
+    });
+    
+    
+---------------------------------------------------------------------------------------------------------------------
+Adding fields to existing documents and assigning value
+This query can also be used to update a field.
+Example: owner_type can be changed from Admin to Null.
+
+
+db.owner.update(
+{}
+,{$set:{"owner_type":null}}
+,false // Upsert: If set to true, creates a new document when no document matches the query criteria.
+,true  // Multi: If set to true, updates multiple documents that meet the query criteria. If set to false, updates one document.
+) 
+db.owner.update(
+{}
+,{$set:{"owner_type":"Admin"}}
+,false // Upsert: If set to true, creates a new document when no document matches the query criteria.
+,true  // Multi: If set to true, updates multiple documents that meet the query criteria. If set to false, updates one document.
+)
+
+db.CarPark.update(
+{}
+,{$set:{"owner_id":null}}
+,false // Upsert: If set to true, creates a new document when no document matches the query criteria.
+,true  // Multi: If set to true, updates multiple documents that meet the query criteria. If set to false, updates one document.
+) 
+
+
+To drop a field from document:
+db.getCollection('Slot').update({}, {$unset: {level_: 1}}, {multi: true})
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+find parking apaces having these many slots
+------------------------------------------------------------------------------------------------------------------------
+               
+    db.car_park.find({aspaces: {$gt: 100}});
+    db.car_park.find({aspaces: {$lt: 50}});
+
+    
+Other queries
+------------------------------------------------------------------------------------------------------------------------
+var cal = db.car_park.findOne(  {name : "Majesco Parking, Mahape"}  );
+
+see how turf works
+------------------------------------------------------------------------------------------------------------------------
+on cmd, 
+node
+> var turf = require('turf')
+undefined
+> turf.distance(turf.point([-122.5, 37.1]), turf.point([-106.82, 39.18]), 'miles')
+863.2551069982414
+> turf.distance(turf.point([-122.5, 37.1]), turf.point([-122.95, 50.12]), 'kilometers')
+900.1549979044975
+>
+
+
+convert an attribute  - 'location' to a 2D sphere for the turf to work
+------------------------------------------------------------------------------------------------------------------------
+
+mongo
+db.car_park.ensureIndex({ loc: '2dsphere' })
+
+db.car_park.find({
+   loc: {
+     $nearSphere: {
+       $geometry: {
+         type: 'Point',
+         coordinates: [  19.0693219, 72.8915444 ]
+       },
+       $maxDistance: 1 * 1609.34
+     }
+   }
+ })
+This should return the car park within 1 KM radius of given location. 
+1609.34 converts miles to kms
+
+
+
+
+
+
+
+    
+Querying Data
+https://www.youtube.com/watch?v=N2XIwjXARAM
+
+Car park Iot with dashboard
+https://www.youtube.com/watch?v=mq_0mjBmUDI
+    
+
+Python code for interrupts
+https://www.youtube.com/watch?v=La1MIQlCYag

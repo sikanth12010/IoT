@@ -1,0 +1,95 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Net.Http;
+
+namespace SmartParkingSystem.Models
+{
+    public class ParkingService
+    {
+        const string url = "http://parkingwebapi.azurewebsites.net/api/location";
+        public Owner GetOwner()
+        {
+            /*using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri(url);                
+                var responseTask = client.GetAsync("owner");
+                responseTask.Wait();
+                var result = responseTask.Result;
+                if (result != null && result.IsSuccessStatusCode)
+                {
+                    var readTask = result.Content.ReadAsAsync<SmartParkingSystem.Models.Owner>();
+                    readTask.Wait();
+                    var owner = readTask.Result;
+                    return owner;
+                }
+            }
+            return null;*/
+
+            Owner owner = new Owner();
+            owner.FirstName = "Swati";
+            owner.LastName = "Karakavalasa";
+            owner.OwnerType = "Admin";
+            owner.Password = "test";
+            return owner;
+        }
+
+        public List<string> GetParkingSlotsSummaryFromAPI(string parkingSpaceId)
+        {
+            List<string> list = new List<string>();
+            list.Add("50");
+            list.Add("30");
+            list.Add("20");
+            return list;
+        }
+
+        public System.Data.DataTable GetParkingSlotsDetailsFromAPI()
+        {
+            System.Data.DataTable dtParkingDetails = new System.Data.DataTable();
+            dtParkingDetails.Columns.Add("ParkingSpaceId", typeof(string));
+            dtParkingDetails.Columns.Add("SlotNo", typeof(string));
+            dtParkingDetails.Columns.Add("CustomerName", typeof(string));
+            dtParkingDetails.Columns.Add("VehicleNo", typeof(string));
+            dtParkingDetails.Columns.Add("Email", typeof(string));
+            dtParkingDetails.Columns.Add("Phone", typeof(string));
+            dtParkingDetails.Columns.Add("SlotStatus", typeof(string));
+
+            System.Data.DataRow dr = dtParkingDetails.NewRow();
+            dr["ParkingSpaceId"] = "1";
+            dr["SlotNo"] = "L0-1";
+            dr["CustomerName"] = "Santosh Kumar";
+            dr["VehicleNo"] = "MH-04-1122";
+            dr["Email"] = "santosh.kumar@gmail.com";
+            dr["Phone"] = "98765412345";
+            dr["SlotStatus"] = "Parked";
+            dtParkingDetails.Rows.Add(dr);
+
+            dr = dtParkingDetails.NewRow();
+            dr["ParkingSpaceId"] = "1";
+            dr["SlotNo"] = "L0-2";
+            dtParkingDetails.Rows.Add(dr);
+
+            dr = dtParkingDetails.NewRow();
+            dr["ParkingSpaceId"] = "1";
+            dr["SlotNo"] = "L0-3";
+            dr["CustomerName"] = "John";
+            dr["VehicleNo"] = "MH-12-3242";
+            dr["Email"] = "john.j@gmail.com";
+            dr["Phone"] = "91254678911";
+            dr["SlotStatus"] = "Parked";
+            dtParkingDetails.Rows.Add(dr);
+
+            dr = dtParkingDetails.NewRow();
+            dr["ParkingSpaceId"] = "2";
+            dr["SlotNo"] = "P2-1";
+            dr["CustomerName"] = "Vicky";
+            dr["VehicleNo"] = "MH-12-1111";
+            dr["Email"] = "vicky.j@gmail.com";
+            dr["Phone"] = "91334678911";
+            dr["SlotStatus"] = "Parked";
+            dtParkingDetails.Rows.Add(dr);
+            return dtParkingDetails;
+        }
+    }
+}

@@ -1,0 +1,56 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace SmartParkingSystem
+{
+    public partial class ParkingSpaces : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            CreateHTMLForParkingSpace();
+        }
+
+        private void CreateHTMLForParkingSpace()
+        {
+            System.Data.DataTable dtParkingSpaceDetails = GetParkingSpaceDetailsFromAPI();
+            if(dtParkingSpaceDetails!=null && dtParkingSpaceDetails.Rows!=null && dtParkingSpaceDetails.Rows.Count>0)
+            {
+                System.Text.StringBuilder stringBuilder = new System.Text.StringBuilder();
+                LinkButton linkBtnParkingSpaceName = new LinkButton();                
+                foreach (System.Data.DataRow dr in dtParkingSpaceDetails.Rows)
+                {
+                   stringBuilder.Append("<label>"+ Convert.ToString(dr["ParkingSpaceName"]) +"</label>");
+
+                    linkBtnParkingSpaceName.Text = Convert.ToString(dr["ParkingSpaceName"]);
+                    linkBtnParkingSpaceName.CssClass = "col-md-2 slots totalslots";
+                    
+                    PhForParkingSpaces.Controls.Add(linkBtnParkingSpaceName);
+                }                
+            }                        
+        }
+
+        private System.Data.DataTable GetParkingSpaceDetailsFromAPI()
+        {
+            System.Data.DataTable dtParkingSpaceDetails = new System.Data.DataTable();
+            dtParkingSpaceDetails.Columns.Add("ParkingSpaceId", typeof(string));
+            dtParkingSpaceDetails.Columns.Add("ParkingSpaceName", typeof(string));
+            
+            System.Data.DataRow dr = dtParkingSpaceDetails.NewRow();
+            dr["ParkingSpaceId"] = "1";
+            dr["ParkingSpaceName"] = "Mastek Parking, Mahape";
+            dtParkingSpaceDetails.Rows.Add(dr);
+
+            dr = dtParkingSpaceDetails.NewRow();
+            dr["ParkingSpaceId"] = "2";
+            dr["ParkingSpaceName"] = "Rupa Solitare Parking, Mahape";
+            dtParkingSpaceDetails.Rows.Add(dr);
+
+            return dtParkingSpaceDetails;
+
+        }
+    }
+}

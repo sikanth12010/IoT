@@ -1,0 +1,5 @@
+D:\ParkingService\ParkingService\ParkingService
+--output-path=obj\Any CPU\Release\netcoreapp2.0\
+--application-name=ParkingService
+--content-root=D:\ParkingService\ParkingService\ParkingService
+--file=

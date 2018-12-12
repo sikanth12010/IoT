@@ -1,0 +1,11 @@
+D:\ParkingService\ParkingService\ParkingService\bin\Any CPU\Release\netcoreapp2.0\ParkingService.deps.json
+D:\ParkingService\ParkingService\ParkingService\bin\Any CPU\Release\netcoreapp2.0\ParkingService.runtimeconfig.json
+D:\ParkingService\ParkingService\ParkingService\bin\Any CPU\Release\netcoreapp2.0\ParkingService.runtimeconfig.dev.json
+D:\ParkingService\ParkingService\ParkingService\bin\Any CPU\Release\netcoreapp2.0\ParkingService.dll
+D:\ParkingService\ParkingService\ParkingService\bin\Any CPU\Release\netcoreapp2.0\ParkingService.pdb
+D:\ParkingService\ParkingService\ParkingService\obj\Any CPU\Release\netcoreapp2.0\ParkingService.csprojResolveAssemblyReference.cache
+D:\ParkingService\ParkingService\ParkingService\obj\Any CPU\Release\netcoreapp2.0\ParkingService.csproj.CoreCompileInputs.cache
+D:\ParkingService\ParkingService\ParkingService\obj\Any CPU\Release\netcoreapp2.0\ParkingService.AssemblyInfoInputs.cache
+D:\ParkingService\ParkingService\ParkingService\obj\Any CPU\Release\netcoreapp2.0\ParkingService.AssemblyInfo.cs
+D:\ParkingService\ParkingService\ParkingService\obj\Any CPU\Release\netcoreapp2.0\ParkingService.dll
+D:\ParkingService\ParkingService\ParkingService\obj\Any CPU\Release\netcoreapp2.0\ParkingService.pdb

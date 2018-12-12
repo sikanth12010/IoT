@@ -1,0 +1,16 @@
+D:\ParkingService\ParkingService\ParkingService.Test\bin\Debug\netcoreapp2.0\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+D:\ParkingService\ParkingService\ParkingService.Test\bin\Debug\netcoreapp2.0\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+D:\ParkingService\ParkingService\ParkingService.Test\bin\Debug\netcoreapp2.0\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+D:\ParkingService\ParkingService\ParkingService.Test\bin\Debug\netcoreapp2.0\ParkingService.Test.deps.json
+D:\ParkingService\ParkingService\ParkingService.Test\bin\Debug\netcoreapp2.0\ParkingService.Test.runtimeconfig.json
+D:\ParkingService\ParkingService\ParkingService.Test\bin\Debug\netcoreapp2.0\ParkingService.Test.runtimeconfig.dev.json
+D:\ParkingService\ParkingService\ParkingService.Test\bin\Debug\netcoreapp2.0\ParkingService.Test.dll
+D:\ParkingService\ParkingService\ParkingService.Test\bin\Debug\netcoreapp2.0\ParkingService.Test.pdb
+D:\ParkingService\ParkingService\ParkingService.Test\bin\Debug\netcoreapp2.0\ParkingService.dll
+D:\ParkingService\ParkingService\ParkingService.Test\bin\Debug\netcoreapp2.0\ParkingService.pdb
+D:\ParkingService\ParkingService\ParkingService.Test\obj\Debug\netcoreapp2.0\ParkingService.Test.csprojResolveAssemblyReference.cache
+D:\ParkingService\ParkingService\ParkingService.Test\obj\Debug\netcoreapp2.0\ParkingService.Test.csproj.CoreCompileInputs.cache
+D:\ParkingService\ParkingService\ParkingService.Test\obj\Debug\netcoreapp2.0\ParkingService.Test.AssemblyInfoInputs.cache
+D:\ParkingService\ParkingService\ParkingService.Test\obj\Debug\netcoreapp2.0\ParkingService.Test.AssemblyInfo.cs
+D:\ParkingService\ParkingService\ParkingService.Test\obj\Debug\netcoreapp2.0\ParkingService.Test.dll
+D:\ParkingService\ParkingService\ParkingService.Test\obj\Debug\netcoreapp2.0\ParkingService.Test.pdb

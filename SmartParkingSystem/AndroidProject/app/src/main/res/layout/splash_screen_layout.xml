@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/splash_logo"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/car_parking_logo"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Welcome to Smart Park"
+        android:textSize="20dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_below="@+id/splash_logo"
+        android:layout_marginTop="10dp"
+        android:textAlignment="center"/>
+
+</RelativeLayout>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_search"
+            android:icon="@drawable/ic_search_black"
+            android:title="Search Parking" />
+        <item
+            android:id="@+id/nav_bookings"
+            android:icon="@drawable/ic_assignment_black_24dp"
+            android:title="Bookings" />
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/ic_account_circle_black"
+            android:title="Profile" />
+        <item
+            android:id="@+id/nav_vouchers"
+            android:icon="@drawable/ic_local_offer_black_24dp"
+            android:title="Redeem Vouchers" />
+
+        <item
+            android:id="@+id/nav_booking_rates"
+            android:icon="@drawable/ic_monetization_on_black_24dp"
+            android:title="Rates" />
+
+        <item
+            android:id="@+id/nav_offers"
+            android:icon="@drawable/ic_redeem_black_24dp"
+            android:title="Offers" />
+
+        <item
+            android:id="@+id/nav_payments"
+            android:icon="@drawable/ic_payment_black_24dp"
+            android:title="Payments" />
+
+        <item
+            android:id="@+id/nav_notifications"
+            android:icon="@drawable/ic_notifications_black_24dp"
+            android:title="Notifications" />
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Share" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_call_black_24dp"
+                android:title="Contact Support" />
+        </menu>
+    </item>
+</menu>

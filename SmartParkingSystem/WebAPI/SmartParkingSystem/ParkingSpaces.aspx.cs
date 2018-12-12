@@ -11,6 +11,7 @@ namespace SmartParkingSystem
     public partial class ParkingSpaces : System.Web.UI.Page
     {
         ParkingService parkingService = new ParkingService();
+        List<CarPark> parkingSpaceDetailsList = new List<CarPark>();
         protected void Page_Load(object sender, EventArgs e)
         {
             CreateHTMLForParkingSpace();            
@@ -21,10 +22,10 @@ namespace SmartParkingSystem
             //Response.Redirect("ParkingSlots.aspx?ParkingSpaceId=" + ((LinkButton)sender).CommandArgument);
             ParkingSpaceIdLbl.Value = ((LinkButton)sender).CommandArgument;
             CarPark carparkObj = GetParkingSlotsSummaryFromAPI(ParkingSpaceIdLbl.Value);
-            ParkingSpaceNameLbl.Text = string.Format(ParkingSpaceNameLbl.Text, carparkObj.Name);
-            TotalParkingSlotsLbl.Text = string.Format(TotalParkingSlotsLbl.Text, carparkObj.Tspaces);
-            OccupiedParkingSlotsLbl.Text = string.Format(OccupiedParkingSlotsLbl.Text, carparkObj.Ospaces);
-            AvailableParkingSlotsLbl.Text = string.Format(AvailableParkingSlotsLbl.Text, carparkObj.Aspaces);
+            ParkingSpaceNameLbl.Text = string.Format("Parking Space: {0}", carparkObj.Name);
+            TotalParkingSlotsLbl.Text = string.Format("Total Parking Slots: {0}", carparkObj.Tspaces);
+            OccupiedParkingSlotsLbl.Text = string.Format("Occupied Parking Slots: {0}", carparkObj.Ospaces);
+            AvailableParkingSlotsLbl.Text = string.Format("Available Parking Slots: {0}", carparkObj.Aspaces);
 
             ParkingDetailsGrid.DataSource = GetParkingSlotsDetailsFromAPI(ParkingSpaceIdLbl.Value);
             ParkingDetailsGrid.DataBind();
@@ -67,18 +68,20 @@ namespace SmartParkingSystem
 
         private void CreateHTMLForParkingSpace()
         {
-            List<CarPark> parkingSpaceDetailsList = GetAllParkingSpacesOfOwnerFromAPI();
+            parkingSpaceDetailsList = GetAllParkingSpacesOfOwnerFromAPI();
             if (parkingSpaceDetailsList != null && parkingSpaceDetailsList.Count > 0)
             {
                 LinkButton linkBtnParkingSpaceName = null;
+                int idx = 0;
                 foreach (CarPark parkingSpace in parkingSpaceDetailsList)
                 {
                     linkBtnParkingSpaceName = new LinkButton();
                     linkBtnParkingSpaceName.Text = parkingSpace.Name;
-                    linkBtnParkingSpaceName.CommandArgument = parkingSpace.Id;
-                    linkBtnParkingSpaceName.CssClass = "col-md-2 slots totalslots";
+                    linkBtnParkingSpaceName.CommandArgument = idx.ToString();
+                    linkBtnParkingSpaceName.CssClass = "col-md-2 slots parkslots";
                     linkBtnParkingSpaceName.Click += LinkBtnParkingSpaceName_Click;
                     PhForParkingSpaces.Controls.Add(linkBtnParkingSpaceName);
+                    ++idx;
                 }
             }
         }
@@ -90,7 +93,7 @@ namespace SmartParkingSystem
 
         private CarPark GetParkingSlotsSummaryFromAPI(string parkingSpaceId)
         {
-            return parkingService.GetParkingSlotsSummaryFromAPI(parkingSpaceId);
+            return parkingService.GetParkingSlotsSummaryFromAPI(parkingSpaceId, parkingSpaceDetailsList);
         }
 
         private List<CustomerSlot> GetParkingSlotsDetailsFromAPI(string parkingSpaceId)

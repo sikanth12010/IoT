@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Net.Http;
+using Newtonsoft.Json;
 
 namespace SmartParkingSystem.Models
 {
     public class ParkingService
     {
-        const string url = "http://parkingwebapi.azurewebsites.net/api/location";
+        const string url = "https://parkingwebapi.azurewebsites.net/api/Location/GetAll";
         public Owner GetOwner(string email, string password)
         {
             /*using (var client = new HttpClient())
@@ -28,7 +29,7 @@ namespace SmartParkingSystem.Models
             return null;*/
 
             Owner owner = new Owner();
-            owner.FirstName = "Swati";
+            owner.FirstName = "Swati"; 
             owner.LastName = "Karakavalasa";
             owner.OwnerType = "Admin";
             owner.Password = "test";
@@ -37,21 +38,23 @@ namespace SmartParkingSystem.Models
 
         public List<CarPark> GetAllParkingSpacesOfOwnerFromAPI(string ownerId)
         {
-            /*using (var client = new HttpClient())
+            List<CarPark> parkingSpacesList = new List<CarPark>();
+            using (var client = new HttpClient())
             {
-                client.BaseAddress = new Uri(url);                
-                var responseTask = client.GetAsync("carpark");
+                //client.BaseAddress = new Uri(url);
+                var responseTask = client.GetAsync("https://parkingwebapi.azurewebsites.net/api/Location/GetAll");
                 responseTask.Wait();
                 var result = responseTask.Result;
                 if (result != null && result.IsSuccessStatusCode)
                 {
-                    var readTask = result.Content.ReadAsAsync<CarPark>();
-                    readTask.Wait();
-                    var carpark = readTask.Result;
+                    var readTask = result.Content.ReadAsStringAsync().Result;
+                    //readTask.Wait();
+                    List<CarPark> carpark = JsonConvert.DeserializeObject<List<CarPark>>(readTask);
                     return carpark;
                 }
             }
-            return null;*/
+            return null;
+            /*
             List<CarPark> parkingSpacesList = new List<CarPark>();
             CarPark carpark = new CarPark();
             carpark.Id = "1";
@@ -67,13 +70,15 @@ namespace SmartParkingSystem.Models
             carpark.Tspaces = 34;
             carpark.Aspaces = 8;
             carpark.Ospaces = carpark.Tspaces - carpark.Aspaces;
-            parkingSpacesList.Add(carpark);
-            return parkingSpacesList;
+            parkingSpacesList.Add(carpark); 
+            return parkingSpacesList; */
         }
-        public CarPark GetParkingSlotsSummaryFromAPI(string parkingSpaceId)
+        public CarPark GetParkingSlotsSummaryFromAPI(string parkingSpaceId, List<CarPark> parkingSpaceDetailsList)
         {
-            /*using (var client = new HttpClient())
+            /*
+            using (var client = new HttpClient())
             {
+                
                 client.BaseAddress = new Uri(url);                
                 var responseTask = client.GetAsync("carpark");
                 responseTask.Wait();
@@ -86,13 +91,15 @@ namespace SmartParkingSystem.Models
                     return carpark;
                 }
             }
-            return null;*/
+            return null;
+            */
             CarPark carpark = new CarPark();
-            carpark.Name = "Mastek Parking, Mahape";
-            carpark.Tspaces = 50;
-            carpark.Aspaces = 20;
+            carpark.Name    = parkingSpaceDetailsList[Int32.Parse(parkingSpaceId)].Name; 
+            carpark.Tspaces = parkingSpaceDetailsList[Int32.Parse(parkingSpaceId)].Tspaces;
+            carpark.Aspaces = parkingSpaceDetailsList[Int32.Parse(parkingSpaceId)].Aspaces;
             carpark.Ospaces = carpark.Tspaces - carpark.Aspaces;
-            return carpark;
+            return carpark;  
+            
         }
 
         public List<CustomerSlot> GetParkingSlotsDetailsFromAPI(string parkingSpaceId)

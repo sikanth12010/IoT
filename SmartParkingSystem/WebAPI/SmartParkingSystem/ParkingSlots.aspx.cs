@@ -10,6 +10,7 @@ namespace SmartParkingSystem
 {
     public partial class ParkingSlots : System.Web.UI.Page
     {
+        /*
         private string selectedParkingSpaceId;
         ParkingService parkingService = new ParkingService();
         protected void Page_Load(object sender, EventArgs e)
@@ -71,5 +72,6 @@ namespace SmartParkingSystem
         {            
             return parkingService.GetParkingSlotsDetailsFromAPI(parkingSpaceId);
         }
+        */
     }
 }

@@ -18,8 +18,12 @@ namespace ParkingService.Models
         public string type { get; set; }
         [BsonElement("loc")]
         public string loc { get; set; }
+        [BsonElement("level")]
+        public int Level { get; set; }
         [BsonElement("slot_status")]
         public string SlotStatus { get; set; }
+        [BsonElement("slot_no")]
+        public int SlotNumber { get; set; }
 
 
     }

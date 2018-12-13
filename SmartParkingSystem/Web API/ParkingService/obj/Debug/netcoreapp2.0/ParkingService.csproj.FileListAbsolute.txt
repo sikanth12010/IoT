@@ -9,3 +9,14 @@ D:\ParkingService\ParkingService\ParkingService\bin\Debug\netcoreapp2.0\ParkingS
 D:\ParkingService\ParkingService\ParkingService\obj\Debug\netcoreapp2.0\ParkingService.dll
 D:\ParkingService\ParkingService\ParkingService\obj\Debug\netcoreapp2.0\ParkingService.pdb
 D:\ParkingService\ParkingService\ParkingService\obj\Debug\netcoreapp2.0\ParkingService.csprojAssemblyReference.cache
+D:\IoT Artifacts\IoT\SmartParkingSystem\Web API\ParkingService\bin\Debug\netcoreapp2.0\ParkingService.deps.json
+D:\IoT Artifacts\IoT\SmartParkingSystem\Web API\ParkingService\bin\Debug\netcoreapp2.0\ParkingService.runtimeconfig.json
+D:\IoT Artifacts\IoT\SmartParkingSystem\Web API\ParkingService\bin\Debug\netcoreapp2.0\ParkingService.runtimeconfig.dev.json
+D:\IoT Artifacts\IoT\SmartParkingSystem\Web API\ParkingService\bin\Debug\netcoreapp2.0\ParkingService.dll
+D:\IoT Artifacts\IoT\SmartParkingSystem\Web API\ParkingService\bin\Debug\netcoreapp2.0\ParkingService.pdb
+D:\IoT Artifacts\IoT\SmartParkingSystem\Web API\ParkingService\obj\Debug\netcoreapp2.0\ParkingService.csprojAssemblyReference.cache
+D:\IoT Artifacts\IoT\SmartParkingSystem\Web API\ParkingService\obj\Debug\netcoreapp2.0\ParkingService.csproj.CoreCompileInputs.cache
+D:\IoT Artifacts\IoT\SmartParkingSystem\Web API\ParkingService\obj\Debug\netcoreapp2.0\ParkingService.AssemblyInfoInputs.cache
+D:\IoT Artifacts\IoT\SmartParkingSystem\Web API\ParkingService\obj\Debug\netcoreapp2.0\ParkingService.AssemblyInfo.cs
+D:\IoT Artifacts\IoT\SmartParkingSystem\Web API\ParkingService\obj\Debug\netcoreapp2.0\ParkingService.dll
+D:\IoT Artifacts\IoT\SmartParkingSystem\Web API\ParkingService\obj\Debug\netcoreapp2.0\ParkingService.pdb

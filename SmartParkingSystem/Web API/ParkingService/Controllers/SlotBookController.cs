@@ -18,7 +18,7 @@ namespace ParkingService.Controllers
     {
         // GET: api/SlotBook
         [HttpGet]
-        [Route("api/SlotBook/GetUserList")]
+        [Route("api/SlotBook/GetUserList/{id}")]
         public string GetUserList(string id)
         {
             var SlotList = MongoDBHelper.GetEntityList<Slot>();
@@ -32,23 +32,38 @@ namespace ParkingService.Controllers
                           ParkingInformation.tspaces,
                           s.vehicle_no, c.FirstName,c.LastName, c.Phone, c.Email };
 
-            return JsonConvert.SerializeObject(res);
+            var Json = JsonConvert.SerializeObject(res);
+            return Json;
         }
 
         // GET: api/SlotBook/5
         // GET: api/Park/5
         //[HttpGet("{id}")]
-        [Route("api/SlotBook/Booked/{id}")]
-        public string Get(string id)
+        [Route("api/SlotBook/Booked")]          
+        public string Get(string carpark_id,int slot_id)
         {
             AuthResponse auth = new AuthResponse();
-            CarPark location = MongoDBHelper.SearchByObjectID<CarPark>(id);
-            if (location != null)
+            CarPark location = MongoDBHelper.SearchByObjectID<CarPark>(carpark_id);
+
+            //List<Slot> slotDetails = MongoDBHelper.GetEntityList<Slot>();
+            Slot slotDetail = MongoDBHelper.SearchByQueryObject<Slot>(Query.EQ("slot_no", slot_id), "Slot");   
+            //Slot slotDetail = slotDetails.FirstOrDefault(s => s.SlotNumber == slot_id);
+            if (location != null && slotDetail != null)
             {
+                
+                if(slotDetail.SlotStatus == "Booked")             //If  booked through Mobile App
+                {
+                    slotDetail.SlotStatus = "Parked";
+                    MongoDBHelper.InsertEntity<Slot>(slotDetail);
+                }
+                else if(slotDetail.SlotStatus == "Empty")          //If Not booked through Mobile App
+                {
+                    location.aspaces = location.aspaces - 1;
+                    MongoDBHelper.InsertEntity<CarPark>(location);
 
-
-                location.aspaces = location.aspaces - 1;
-                MongoDBHelper.InsertEntity<CarPark>(location);
+                    slotDetail.SlotStatus = "Parked";
+                    MongoDBHelper.InsertEntity<Slot>(slotDetail);
+                }
                 auth.Status = 0;
                 return JsonConvert.SerializeObject(auth);
             }
@@ -68,7 +83,7 @@ namespace ParkingService.Controllers
 
 
         [HttpPost]
-        [Route("api/SlotBook/Post")]
+        [Route("api/SlotBook/Post")]       //called from mobile App
         public void Post([FromBody]Slot value)
         {
             //Update carpark location

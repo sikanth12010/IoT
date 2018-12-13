@@ -9,7 +9,7 @@ namespace SmartParkingSystem.Models
 {
     public class ParkingService
     {
-        const string url = "https://parkingwebapi.azurewebsites.net/api/Location/GetAll";
+        const string url = "https://parkingwebapi.azurewebsites.net";
         public Owner GetOwner(string email, string password)
         {
             /*using (var client = new HttpClient())

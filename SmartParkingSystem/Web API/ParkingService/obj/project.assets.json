@@ -5301,11 +5301,10 @@
   },
   "libraries": {
     "DnsClient/1.0.7": {
-      "sha512": "i6Imdyz+dvljMtQh1QtjMzguLEFFJCilecHiaRPIbNX4gK3zluf/3OQWD1XbVy5PXf1u394x5ImB+uu7DNMS1w==",
+      "sha512": "f3k5ufhUSL658fy/ac1mReqRIr0jGMyOJFvBqJ+7cASq01NIysYbrrRDjboYKAGrd0Y2mc1A749uQvT8vAA91A==",
       "type": "package",
       "path": "dnsclient/1.0.7",
       "files": [
-        ".signature.p7s",
         "dnsclient.1.0.7.nupkg.sha512",
         "dnsclient.nuspec",
         "lib/net45/DnsClient.dll",
@@ -5315,11 +5314,10 @@
       ]
     },
     "GeoCoordinate.NetCore/1.0.0.1": {
-      "sha512": "8C5ZcAJXIEq3SL3spW7BtmGgYWvQMB6AuApkSFbCXPaOZOwEW2AwhlWn0IHXJ0iI9qjvpf/9Urcd7obgKoMpKg==",
+      "sha512": "VrR5MLkh0u2qka79JcQ/GUrgHwGidayCA7nKy2430qYX/JHdrHLgwp1MuBTSsygWs0s2V6GQ0Hp8HUMatHiWFw==",
       "type": "package",
       "path": "geocoordinate.netcore/1.0.0.1",
       "files": [
-        ".signature.p7s",
         "geocoordinate.netcore.1.0.0.1.nupkg.sha512",
         "geocoordinate.netcore.nuspec",
         "lib/netstandard1.6/GeoCoordinate.NetCore.deps.json",
@@ -8050,11 +8048,10 @@
       ]
     },
     "Microsoft.VisualStudio.Web.CodeGeneration/2.0.2": {
-      "sha512": "Vgf64QAu7mbD12/C125YoEpcmxkPjZlJ19l2xD7sDsZYYZVWmZRsrNbnzLXq8upJ110IScIGE3k4REY5+3ycSg==",
+      "sha512": "hyPNYu/jZIXfH/ymxQHRxkB2qb8qpQnb9R+sajyxCBA66XjYJsh+2zROmR0ZOgIXawNuEVcjFnq+CAtGLdO/GQ==",
       "type": "package",
       "path": "microsoft.visualstudio.web.codegeneration/2.0.2",
       "files": [
-        ".signature.p7s",
         "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.dll",
         "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.xml",
         "microsoft.visualstudio.web.codegeneration.2.0.2.nupkg.sha512",
@@ -8062,11 +8059,10 @@
       ]
     },
     "Microsoft.VisualStudio.Web.CodeGeneration.Contracts/2.0.2": {
-      "sha512": "d8Nl09M2esmDr3gAw07lv9KQwM3uPW4v27Rlb9CXmopT1Z7PQDfxJ3vKYYPmD+zeJWf5T/T6QXYYJp02bVfrIA==",
+      "sha512": "AJfxuwaqbTl2ITFR99y8PZx08ErXCPDjJLLzr0uNnq9MOIIvDcfLQgbaxOgae05RL/xTl936LHQFXAAJchArbw==",
       "type": "package",
       "path": "microsoft.visualstudio.web.codegeneration.contracts/2.0.2",
       "files": [
-        ".signature.p7s",
         "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll",
         "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.Contracts.xml",
         "microsoft.visualstudio.web.codegeneration.contracts.2.0.2.nupkg.sha512",
@@ -8074,11 +8070,10 @@
       ]
     },
     "Microsoft.VisualStudio.Web.CodeGeneration.Core/2.0.2": {
-      "sha512": "AiwudmUHvZTCdVTDDYHe2C9jyg36HlD1ZBOLbvCYqDK66PYZ1K6C/mvwjvzOJoNP7mKMV3cd0dLKTdQ0r85N5g==",
+      "sha512": "of36Gj6SaoQ3qvrt+VQsycOUGSW+WZtpvJH1yvDaolXdWiNW254yC4Gd1AM0x3+bKQqrkJYoVu2LaloWvYYa8A==",
       "type": "package",
       "path": "microsoft.visualstudio.web.codegeneration.core/2.0.2",
       "files": [
-        ".signature.p7s",
         "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.Core.dll",
         "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.Core.xml",
         "microsoft.visualstudio.web.codegeneration.core.2.0.2.nupkg.sha512",
@@ -8086,11 +8081,10 @@
       ]
     },
     "Microsoft.VisualStudio.Web.CodeGeneration.Design/2.0.2": {
-      "sha512": "lP/3x+jVLfQxzVJynWNh0qnxUHqwBTg/z0h9Q8O3+sVcZMTtK9SUsNHTN17fS/PwoHEnjzAZaiC4zB8OazRx+A==",
+      "sha512": "jhtIx2Qj9muaoLnYSkry4imTHCLvQ2wQTXVWf+l7YaneFkowcqAzdWnqXwYnART4UhWxlXbQtCxrGcyJgaL4hg==",
       "type": "package",
       "path": "microsoft.visualstudio.web.codegeneration.design/2.0.2",
       "files": [
-        ".signature.p7s",
         "lib/net461/dotnet-aspnet-codegenerator-design.exe",
         "lib/net461/dotnet-aspnet-codegenerator-design.xml",
         "lib/netcoreapp2.0/dotnet-aspnet-codegenerator-design.dll",
@@ -8108,11 +8102,10 @@
       ]
     },
     "Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore/2.0.2": {
-      "sha512": "i24X/nplIl7SaKyKu1K+7+5AVWX2FPS6a9RMVY/4Y/PspctxeoR3oH36zYYUdtfq+ExFXFziZhMLC80GCLgmQg==",
+      "sha512": "xMGyLe+IvlVZMwrcaZd2ztZUDq4OAB5pu1JhV0hnqXae7Rg9SFp8XqqVgvEbeXv37UWDrAJ3aaiDEQP/jPO0Yg==",
       "type": "package",
       "path": "microsoft.visualstudio.web.codegeneration.entityframeworkcore/2.0.2",
       "files": [
-        ".signature.p7s",
         "Templates/DbContext/NewLocalDbContext.cshtml",
         "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll",
         "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.xml",
@@ -8121,11 +8114,10 @@
       ]
     },
     "Microsoft.VisualStudio.Web.CodeGeneration.Templating/2.0.2": {
-      "sha512": "n71NixzY5i2WBWpL5NcBOE4Fl4DPCmg0c2Bw383OiH+cFiOw0UmwEnZCvZZg02wlZAal/IprsQWNHwdlSvMycg==",
+      "sha512": "XGBMEv0Co6Cs7Axoow9AlMWZtqH5WCJQwQyFgNCgxo2QysDdLur6M2WHsvuShA8zAIjJu0+JQzOzeDd6jlP4fA==",
       "type": "package",
       "path": "microsoft.visualstudio.web.codegeneration.templating/2.0.2",
       "files": [
-        ".signature.p7s",
         "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll",
         "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.Templating.xml",
         "microsoft.visualstudio.web.codegeneration.templating.2.0.2.nupkg.sha512",
@@ -8133,11 +8125,10 @@
       ]
     },
     "Microsoft.VisualStudio.Web.CodeGeneration.Utils/2.0.2": {
-      "sha512": "Lc3el5IpgiU5ddf1skOaLtIrwcDJ7vasrbMPXdVI7IiFPceB2jjH4NLaMv/t2ypV14oQQsG1Y1mxlQxNR6WJ9w==",
+      "sha512": "iHFv23BBc2+PDu2hHf7PMIedeZn9l8azlnrew0TgDj6eBp5yRd//1PSlhp81gYyPKJoi8BfJYhqVH6ZIuMCN8g==",
       "type": "package",
       "path": "microsoft.visualstudio.web.codegeneration.utils/2.0.2",
       "files": [
-        ".signature.p7s",
         "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll",
         "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGeneration.Utils.xml",
         "microsoft.visualstudio.web.codegeneration.utils.2.0.2.nupkg.sha512",
@@ -8145,11 +8136,10 @@
       ]
     },
     "Microsoft.VisualStudio.Web.CodeGenerators.Mvc/2.0.2": {
-      "sha512": "BDLf8Kd/8F/AgGEMMeSn1Uk3o9hxynVRf74qAMOnq6LNkn8lLmMj7otkNKL5JMv77unBlgfiNJ5dqxu62dlMPA==",
+      "sha512": "+H5eqw+SiEZvTzKDJXSUVSQvH/wYN0iSfftA0UL6OgJw+zLfPt6HQ5BZNSrCOBBobDSD/6eBC6PTMzZgsZTUmA==",
       "type": "package",
       "path": "microsoft.visualstudio.web.codegenerators.mvc/2.0.2",
       "files": [
-        ".signature.p7s",
         "Generators/ParameterDefinitions/area.json",
         "Generators/ParameterDefinitions/controller.json",
         "Generators/ParameterDefinitions/razorpage.json",
@@ -8265,11 +8255,10 @@
       ]
     },
     "mongocsharpdriver/2.6.1": {
-      "sha512": "FqzbaLAR7jSEOu/luRnT7AT+I+/AVXv8aHqydkcvlzRn013UMNQh5O3An02JQC2L5N8foMPhacBXgYhiiBSBrg==",
+      "sha512": "5nHVbrNJf+2fTJ6fWNUkvDJT75saQ7OgsvuRPm+w348VZDKklH0kxCY8dFOmtoy8IG1hLJRFvvJSXujHTY+frg==",
       "type": "package",
       "path": "mongocsharpdriver/2.6.1",
       "files": [
-        ".signature.p7s",
         "License.rtf",
         "lib/net45/MongoDB.Driver.Legacy.dll",
         "lib/net45/MongoDB.Driver.Legacy.xml",
@@ -8280,11 +8269,10 @@
       ]
     },
     "MongoDB.Bson/2.6.1": {
-      "sha512": "+oD/dhwgX8kco7AgIwzheLhGxCGexojMl0yy5CXj3yjZ9kTQuwX3pAG8gD72pDuxxmxJbQiEjo5qmLBNliUYWg==",
+      "sha512": "pKSE9nG9OZX2uPjSI/AGWLGtOVINNiUbLpJYtFN/0oxWams0KbXOW6tFXAoL1iXuWUR3RxSz8u4DIhueCSm/Jg==",
       "type": "package",
       "path": "mongodb.bson/2.6.1",
       "files": [
-        ".signature.p7s",
         "License.rtf",
         "lib/net45/MongoDB.Bson.dll",
         "lib/net45/MongoDB.Bson.xml",
@@ -8295,11 +8283,10 @@
       ]
     },
     "MongoDB.Driver/2.6.1": {
-      "sha512": "ci1cUg73TQfeW7P6YDCQv2BYFHwouhHW0lost5EOFdviXeWIkPQ/W2XlqTyIAgWPZ0c3ZA4GBMz6we4s6Xxwpg==",
+      "sha512": "GwEKCHKjmgcsinLiLs7q54YoS4n03e+Ax/21j4PvppTYQAIpPusX/qdaU/gvZbpH97k/LmSGBN/5cdxN6mvFGw==",
       "type": "package",
       "path": "mongodb.driver/2.6.1",
       "files": [
-        ".signature.p7s",
         "License.rtf",
         "lib/net45/MongoDB.Driver.dll",
         "lib/net45/MongoDB.Driver.xml",
@@ -8310,11 +8297,10 @@
       ]
     },
     "MongoDB.Driver.Core/2.6.1": {
-      "sha512": "vaeNyFf6YMHtNwMwwI7I9tojBxn2Pfv8yt5rhe7RKniTL5dK8oMhMTS3gKo6cHLINle69efpuifjnuIt7lqd4A==",
+      "sha512": "lBjITp66o0OX5PHp5INxYTOz7RZa2GCPpKXUYZMo+1Cxy8TtIDiba6PmP6XB5KO+Zw/8AeofSh4ofj1uHxXuqQ==",
       "type": "package",
       "path": "mongodb.driver.core/2.6.1",
       "files": [
-        ".signature.p7s",
         "License.rtf",
         "lib/net45/MongoDB.Driver.Core.dll",
         "lib/net45/MongoDB.Driver.Core.xml",
@@ -10943,11 +10929,10 @@
       ]
     },
     "System.Net.NetworkInformation/4.3.0": {
-      "sha512": "MKLDZXuBZOS348egaxkMgwSUHIIhykVf0pudpfSdzjKmkRpVCzqkpysPHHp8HfckYAhuXRM+UgxWPgFTHF8Trg==",
+      "sha512": "zNVmWVry0pAu7lcrRBhwwU96WUdbsrGL3azyzsbXmVNptae1+Za+UgOe9Z6s8iaWhPn7/l4wQqhC56HZWq7tkg==",
       "type": "package",
       "path": "system.net.networkinformation/4.3.0",
       "files": [
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -12708,11 +12693,10 @@
       ]
     },
     "System.Security.SecureString/4.0.0": {
-      "sha512": "7TGOnj9Lr8ljCJbMHjZC34hEw3Z+zRPp7eNhLBg22mbSqO8gQMGLJ/vQkWv8HFYG0t2i53ZulKZ8NNho+jVK7Q==",
+      "sha512": "sqzq9GD6/b0yqPuMpgIKBuoLf4VKAj8oAfh4kXSzPaN6eoKY3hRi9C5L27uip25qlU+BGPfb0xh2Rmbwc4jFVA==",
       "type": "package",
       "path": "system.security.securestring/4.0.0",
       "files": [
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -13158,11 +13142,10 @@
       ]
     },
     "System.Threading.Overlapped/4.3.0": {
-      "sha512": "JpukcZA7kre2gQ7GrhtvZu1xv/LVEG5HV9AajQ3XV7l36T6ICalw/llfkBHeK/eqo8UWpMNqkWGCzzlSuqE6pg==",
+      "sha512": "m3HQ2dPiX/DSTpf+yJt8B0c+SRvzfqAJKx+QDWi+VLhz8svLT23MVjEOHPF/KiSLeArKU/iHescrbLd3yVgyNg==",
       "type": "package",
       "path": "system.threading.overlapped/4.3.0",
       "files": [
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/net46/System.Threading.Overlapped.dll",
@@ -13851,23 +13834,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\hari13372\\.nuget\\packages\\": {},
+    "C:\\Users\\deepak12913\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\ParkingService\\ParkingService\\ParkingService\\ParkingService.csproj",
+      "projectUniqueName": "D:\\IoT Artifacts\\IoT\\SmartParkingSystem\\Web API\\ParkingService\\ParkingService.csproj",
       "projectName": "ParkingService",
-      "projectPath": "D:\\ParkingService\\ParkingService\\ParkingService\\ParkingService.csproj",
-      "packagesPath": "C:\\Users\\hari13372\\.nuget\\packages\\",
-      "outputPath": "D:\\ParkingService\\ParkingService\\ParkingService\\obj\\",
+      "projectPath": "D:\\IoT Artifacts\\IoT\\SmartParkingSystem\\Web API\\ParkingService\\ParkingService.csproj",
+      "packagesPath": "C:\\Users\\deepak12913\\.nuget\\packages\\",
+      "outputPath": "D:\\IoT Artifacts\\IoT\\SmartParkingSystem\\Web API\\ParkingService\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\hari13372\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\deepak12913\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

@@ -35,7 +35,7 @@ def car_status17(channel):
     if GPIO.input(IR_PIN17):     # if port 25 == 1        
         #print(pin17_status)
         if pin17_status == 1:
-            url = "http://parkingwebapi.azurewebsites.net/api/SlotEmpty/5af30d69cdafc0b5115d574f"
+            url = "http://parkingwebapi.azurewebsites.net/api/SlotEmpty/5af30d69cdafc0b5115d574f/17"
             data = ""
             headers = {'content-type':'application/json'}
             r = requests.put(url, data, headers=headers)        
@@ -46,7 +46,7 @@ def car_status17(channel):
     else:                  # if port 25 != 1        
         #print(pin17_status)
         if pin17_status == 0:
-            url = "http://parkingwebapi.azurewebsites.net/api/SlotBook/booked/5af30d69cdafc0b5115d574f" # Call API to update slot status to Confirmed
+            url = "http://parkingwebapi.azurewebsites.net/api/SlotBook/Booked?carpark_id=5af30d69cdafc0b5115d574f&slot_id=17" # Call API to update slot status to Confirmed
             data = ""
             headers = {'content-type':'application/json'}
             #r = requests.get(url, data, headers=headers)
@@ -58,20 +58,20 @@ def car_status27(channel):
     global pin27_status
     if GPIO.input(IR_PIN27):     # if port 25 == 1
         if pin27_status == 1:
-            url = "http://parkingwebapi.azurewebsites.net/api/SlotEmpty/5af30d69cdafc0b5115d574f"
+            url = "http://parkingwebapi.azurewebsites.net/api/SlotEmpty/5af30d69cdafc0b5115d574f/27"
             data = ""
             headers = {'content-type':'application/json'}
             r = requests.put(url, data, headers=headers)        
-            print("Car Slot 27 Empty API status {:>3} ".format(r.status_code))
-            #print("slot 27 empty")        
+            #print("Car Slot 27 Empty API status {:>3} ".format(r.status_code))
+            print("slot 27 empty")
             pin27_status = 0
         
     else:                  # if port 25 != 1
         if pin27_status==0:
-            url = "http://parkingwebapi.azurewebsites.net/api/SlotBook/booked/5af30d69cdafc0b5115d574f" # Call API to update slot status to Confirmed
+            url = "http://parkingwebapi.azurewebsites.net/api/SlotBook/Booked?carpark_id=5af30d69cdafc0b5115d574f&slot_id=27" # Call API to update slot status to Confirmed
             data = ""
             headers = {'content-type':'application/json'}
-            #r = requests.get(url, data, headers=headers)
+            r = requests.get(url, data, headers=headers)
             #print("Car Slot 27 Occupied API status {:>3} ".format(r.status_code))
             print("slot 27 occupied")        
             pin27_status = 1

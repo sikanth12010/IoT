@@ -7,15 +7,17 @@ namespace SmartParkingSystem.Models
 {
     public class CustomerSlot
     {
-        public string ParkingSpaceId { get; set; }
-        public string SlotNo { get; set; }
-        public string VehicleNo { get; set; }
-        public string Type { get; set; }
-        public string Loc { get; set; }
-        public string SlotStatus { get; set; }
-        public string Level { get; set; }
-        public string CustomerName { get; set; }
+        public string car_park_id { get; set; }
+        public int SlotNumber { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Vehicle_No { get; set; }
+        public int Level { get; set; }
+        //public string Type { get; set; }
+        //public string Loc { get; set; } 
+        //public string CustomerName { get; set; }
         public string Email { get; set; }
-        public string Phone { get; set; }
+        public int Phone { get; set; }
+        public string SlotStatus { get; set; }
     }
 }

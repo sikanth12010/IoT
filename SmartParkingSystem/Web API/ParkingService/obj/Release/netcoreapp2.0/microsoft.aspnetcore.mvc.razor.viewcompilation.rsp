@@ -1,5 +1,5 @@
-D:\IoT Artifacts\IoT\SmartParkingSystem\Web API\ParkingService
+C:\GitWorkSpace\IoT\SmartParkingSystem\Web API\ParkingService
 --output-path=obj\Release\netcoreapp2.0\
 --application-name=ParkingService
---content-root=D:\IoT Artifacts\IoT\SmartParkingSystem\Web API\ParkingService
+--content-root=C:\GitWorkSpace\IoT\SmartParkingSystem\Web API\ParkingService
 --file=

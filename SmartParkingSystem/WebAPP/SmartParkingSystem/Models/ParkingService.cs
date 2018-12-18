@@ -9,31 +9,33 @@ namespace SmartParkingSystem.Models
 {
     public class ParkingService
     {
-        const string url = "https://parkingwebapi.azurewebsites.net";
+        //const string url = "https://parkingwebapi.azurewebsites.net/";
+        const string url = "http://parkingservice20181213.azurewebsites.net/";
+
         public Owner GetOwner(string email, string password)
         {
-            /*using (var client = new HttpClient())
+            using (var client = new HttpClient())
             {
-                client.BaseAddress = new Uri(url);                
-                var responseTask = client.GetAsync("owner");
+                client.BaseAddress = new Uri(url);
+                var responseTask = client.GetAsync(string.Format("api/Owner?username={0}&password={1}",email,password));
                 responseTask.Wait();
                 var result = responseTask.Result;
                 if (result != null && result.IsSuccessStatusCode)
                 {
-                    var readTask = result.Content.ReadAsAsync<Owner>();
-                    readTask.Wait();
-                    var owner = readTask.Result;
+                    var readTask = result.Content.ReadAsStringAsync().Result;
+                    Owner owner = JsonConvert.DeserializeObject<Owner>(readTask);
                     return owner;
                 }
             }
-            return null;*/
-
+            return null;
+            
+                /*
             Owner owner = new Owner();
             owner.FirstName = "Swati"; 
             owner.LastName = "Karakavalasa";
             owner.OwnerType = "Admin";
             owner.Password = "test";
-            return owner;
+            return owner; */
         }
 
         public List<CarPark> GetAllParkingSpacesOfOwnerFromAPI(string ownerId)
@@ -41,8 +43,8 @@ namespace SmartParkingSystem.Models
             List<CarPark> parkingSpacesList = new List<CarPark>();
             using (var client = new HttpClient())
             {
-                //client.BaseAddress = new Uri(url);
-                var responseTask = client.GetAsync("https://parkingwebapi.azurewebsites.net/api/Location/GetAll");
+                client.BaseAddress = new Uri(url);
+                var responseTask = client.GetAsync("api/Location/GetAll");
                 responseTask.Wait();
                 var result = responseTask.Result;
                 if (result != null && result.IsSuccessStatusCode)
@@ -94,7 +96,8 @@ namespace SmartParkingSystem.Models
             return null;
             */
             CarPark carpark = new CarPark();
-            carpark.Name    = parkingSpaceDetailsList[Int32.Parse(parkingSpaceId)].Name; 
+            carpark.Name    = parkingSpaceDetailsList[Int32.Parse(parkingSpaceId)].Name;
+            carpark._Id      = parkingSpaceDetailsList[Int32.Parse(parkingSpaceId)]._Id;
             carpark.Tspaces = parkingSpaceDetailsList[Int32.Parse(parkingSpaceId)].Tspaces;
             carpark.Aspaces = parkingSpaceDetailsList[Int32.Parse(parkingSpaceId)].Aspaces;
             carpark.Ospaces = carpark.Tspaces - carpark.Aspaces;
@@ -102,11 +105,24 @@ namespace SmartParkingSystem.Models
             
         }
 
-        public List<CustomerSlot> GetParkingSlotsDetailsFromAPI(string parkingSpaceId)
+        public List<CustomerSlot> GetParkingSlotsDetailsFromAPI(string parkingSpaceId, List<CarPark> parkingSpaceDetailsList)
         {
-            /*using (var client = new HttpClient())
+            string car_park_id = parkingSpaceDetailsList[Int32.Parse(parkingSpaceId)]._Id;
+            using (var client = new HttpClient())
             {
-                client.BaseAddress = new Uri(url);                
+                client.BaseAddress = new Uri(url);  
+                var responseTask = client.GetAsync(string.Format("api/SlotBook/GetUserList/{0}",car_park_id));
+                responseTask.Wait();
+                var result = responseTask.Result;
+                if (result != null && result.IsSuccessStatusCode)
+                {
+                    var readTask = result.Content.ReadAsStringAsync ().Result;
+                    //readTask.Wait();
+                    //List<CustomerSlot> SlotSummary = readTask;
+                    List<CustomerSlot> SlotSummary = JsonConvert.DeserializeObject<List<CustomerSlot>>(readTask);
+                    return SlotSummary;
+                }
+                /*
                 var responseTask = client.GetAsync("slot");
                 responseTask.Wait();
                 var result = responseTask.Result;
@@ -116,9 +132,11 @@ namespace SmartParkingSystem.Models
                     readTask.Wait();
                     var slot = readTask.Result;
                     return slot.ToList();
-                }
+                }*/
             }
-            return null;*/
+            return null;
+
+            /*
 
             List<CustomerSlot> parkingSlotsList = new List<CustomerSlot>();
             CustomerSlot parkingSlot = new CustomerSlot();
@@ -156,7 +174,10 @@ namespace SmartParkingSystem.Models
             parkingSlot.SlotStatus = "Parked";
             parkingSlotsList.Add(parkingSlot);
 
+
+
             return parkingSlotsList;
+            */
         }
     }
 }

@@ -12,7 +12,7 @@ using MongoDB.Driver.Linq;
 
 namespace ParkingService.Controllers
 {
-    [Produces("application/json")]
+    //[Produces("application/json")]
     // [Route("api/SlotBook")]
     public class SlotBookController : Controller
     {
@@ -22,17 +22,35 @@ namespace ParkingService.Controllers
         public string GetUserList(string id)
         {
             var SlotList = MongoDBHelper.GetEntityList<Slot>();
-            var ParkingInformation = MongoDBHelper.SearchByObjectID<CarPark>(id);
+            var ParkingInformation = MongoDBHelper.GetEntityList<CarPark>();
+           // var ParkingInformation = MongoDBHelper.SearchByObjectID<CarPark>(id);
             var customerList = MongoDBHelper.GetEntityList<Customer>();
             var res = from s in SlotList
                       join c in customerList on s.cust_id equals c._id
-                      select new {
-                          ParkingInformation.name,
-                          ParkingInformation.aspaces,
-                          ParkingInformation.tspaces,
-                          s.vehicle_no, c.FirstName,c.LastName, c.Phone, c.Email };
+                      join p in ParkingInformation on s.car_park_id equals p._id
+                      select new
+                      {
+                          //ParkingInformation.name,
+                          //ParkingInformation.aspaces,
+                          //ParkingInformation.tspaces,
+                          p._id,
+                          s.SlotNumber,
+                          c.FirstName,
+                          c.LastName,
+                          s.vehicle_no,
+                          s.Level,
+                          c.Email,
+                          c.Phone,
+                          s.SlotStatus
+                      };
 
-            var Json = JsonConvert.SerializeObject(res);
+            List<OccupiedSlots> slotDetails = new List<OccupiedSlots>();
+            foreach (var i in res)
+            {
+                slotDetails.Add(new OccupiedSlots(i._id,i.SlotNumber, i.FirstName, i.LastName, i.vehicle_no, i.Level, i.Email, i.Phone, i.SlotStatus));   
+            }
+            //
+            var Json = JsonConvert.SerializeObject(slotDetails);
             return Json;
         }
 

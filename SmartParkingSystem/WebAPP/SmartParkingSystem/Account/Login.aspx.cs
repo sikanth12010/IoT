@@ -30,19 +30,23 @@ namespace SmartParkingSystem.Account
                 //Check the user type : admin/super user
                 //Redirect to the respective page as per the user type
                 var owner = parkingService.GetOwner(Email.Text, Password.Text);
-                if (owner != null && !string.IsNullOrEmpty(owner.Password) && owner.Password.Equals(Password.Text))
+                if (owner != null && owner.Status == 0)
                 {
-                    switch (owner.OwnerType)
+
+                    if (!string.IsNullOrEmpty(owner.Password) && owner.Password.Equals(Password.Text))
                     {
-                        case "Admin":
-                        case "SuperAdmin":
-                            Session["LoggedInUser"] = owner;
-                            Response.Redirect("~/AdminDashboard?OwnerType=" + owner.OwnerType);
-                            break;
-                        default:
-                            FailureText.Text = "Invalid login attempt";
-                            ErrorMessage.Visible = true;
-                            break;
+                        switch (owner.OwnerType)
+                        {
+                            case "Admin":
+                            case "SuperAdmin":
+                                Session["LoggedInUser"] = owner;
+                                Response.Redirect("~/AdminDashboard?OwnerType=" + owner.OwnerType);
+                                break;
+                            default:
+                                FailureText.Text = "Invalid login attempt";
+                                ErrorMessage.Visible = true;
+                                break;
+                        }
                     }
                 }
                 else

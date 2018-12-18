@@ -55,6 +55,7 @@ namespace ParkingService.Controllers
 
         }
 
+        /*
         [HttpPatch("{carpark_id}/{slot_id}")]
         public string ClearSlot(string carpark_id, int slot_id, [FromBody] JsonPatchDocument <Slot> slotPatch )
         {
@@ -75,6 +76,7 @@ namespace ParkingService.Controllers
             auth.Status = 1;
             return JsonConvert.SerializeObject(auth);
         }
+        */
         
         // DELETE: api/ApiWithActions/5
         [HttpDelete("{id}")]

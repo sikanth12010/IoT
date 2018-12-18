@@ -8,6 +8,7 @@ namespace ParkingService.Models
 {
     public class Customer : Entity
     {
+       
         [BsonElement("username")]
         public string UserName { get; set; }
 

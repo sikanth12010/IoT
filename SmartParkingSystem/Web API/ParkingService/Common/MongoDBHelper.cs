@@ -58,7 +58,7 @@ namespace ParkingService.Models
         public static T SearchByQueryObject<T>(IMongoQuery mongoQuery,string entityName) where T : Entity
         {
             //var entity = DB.GetCollection<T>(entityName).Find(mongoQuery);
-            var entity = DB.GetCollection<T>(entityName).Find(mongoQuery);
+            var entity = DB.GetCollection<T>(entityName).FindOne(mongoQuery);
             return entity as T;
         }
 

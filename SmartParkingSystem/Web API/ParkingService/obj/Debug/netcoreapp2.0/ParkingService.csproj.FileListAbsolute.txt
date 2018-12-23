@@ -32,3 +32,4 @@ C:\GitWorkSpace\IoT\SmartParkingSystem\Web API\ParkingService\obj\Debug\netcorea
 C:\GitWorkSpace\IoT\SmartParkingSystem\Web API\ParkingService\obj\Debug\netcoreapp2.0\ParkingService.dll
 C:\GitWorkSpace\IoT\SmartParkingSystem\Web API\ParkingService\obj\Debug\netcoreapp2.0\ParkingService.pdb
 C:\GitWorkSpace\IoT\SmartParkingSystem\Web API\ParkingService\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+D:\IoT Artifacts\IoT\SmartParkingSystem\Web API\ParkingService\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs

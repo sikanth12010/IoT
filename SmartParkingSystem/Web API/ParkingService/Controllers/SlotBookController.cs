@@ -111,8 +111,22 @@ namespace ParkingService.Controllers
                 location.aspaces = location.aspaces - 1;
                 MongoDBHelper.InsertEntity<CarPark>(location);
             }
-            value.SlotStatus = "Booked";
-            MongoDBHelper.InsertEntity<Slot>(value);
+            value.SlotNumber = 17;
+            Slot slot = MongoDBHelper.SearchByQueryObject<Slot>(Query.EQ("slot_no", value.SlotNumber), "Slot");
+            //Slot slot = MongoDBHelper.GetEntityList
+            if (slot != null)
+            {
+                if (slot.SlotStatus == "Empty")
+                {
+                    slot.SlotStatus = "Booked";
+                    slot.SlotNumber = value.SlotNumber;
+                    MongoDBHelper.InsertEntity<Slot>(slot);
+                }
+                else
+                {
+                    //return error
+                }
+            }
             // JObject json = JObject.Parse(value);
 
         }

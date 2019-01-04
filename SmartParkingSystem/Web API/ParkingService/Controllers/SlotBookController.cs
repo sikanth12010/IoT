@@ -102,33 +102,41 @@ namespace ParkingService.Controllers
 
         [HttpPost]
         [Route("api/SlotBook/Post")]       //called from mobile App
-        public void Post([FromBody]Slot value)
+        public string Post([FromBody]Slot value)
         {
             //Update carpark location
-            CarPark location = MongoDBHelper.SearchByObjectID<CarPark>(value.car_park_id);
-            if (location != null)
-            {
-                location.aspaces = location.aspaces - 1;
-                MongoDBHelper.InsertEntity<CarPark>(location);
-            }
-            value.SlotNumber = 17;
-            Slot slot = MongoDBHelper.SearchByQueryObject<Slot>(Query.EQ("slot_no", value.SlotNumber), "Slot");
-            //Slot slot = MongoDBHelper.GetEntityList
-            if (slot != null)
-            {
-                if (slot.SlotStatus == "Empty")
+            AuthResponse objResponse = new AuthResponse();
+            objResponse.Status = 2;
+            try
+            { 
+                CarPark location = MongoDBHelper.SearchByObjectID<CarPark>(value.car_park_id);
+                if (location != null)
                 {
+                    location.aspaces = location.aspaces - 1;
+                    MongoDBHelper.InsertEntity<CarPark>(location);
+                }
+
+                var query = Query.And(Query.EQ("car_park_id", value.car_park_id), Query.EQ("slot_status", "Empty"));
+                Slot slot = MongoDBHelper.SearchByQueryObject<Slot>(query, "Slot");
+                //Slot slot = MongoDBHelper.GetEntityList
+                if (slot != null)
+                {
+                    objResponse.classobject = slot;
                     slot.SlotStatus = "Booked";
                     slot.SlotNumber = value.SlotNumber;
                     MongoDBHelper.InsertEntity<Slot>(slot);
                 }
                 else
-                {
-                    //return error
-                }
+                    //No slot available
+                    objResponse.Status = 3;
             }
-            // JObject json = JObject.Parse(value);
+            catch(System.Exception)
+            {
+                //Error while processing 
+                objResponse.Status = 1;
+            }
 
+            return JsonConvert.SerializeObject(objResponse);
         }
 
         // PUT: api/SlotBook/5

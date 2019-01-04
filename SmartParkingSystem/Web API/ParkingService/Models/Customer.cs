@@ -8,7 +8,21 @@ namespace ParkingService.Models
 {
     public class Customer : Entity
     {
-       
+        public Customer(Customer customer)
+        {
+            UserName = customer.UserName;
+            FirstName = customer.FirstName;
+            LastName = customer.LastName;
+            Email = customer.Email;
+            Phone = customer.Phone;
+            Photo = customer.Photo;
+            Password = customer.Password;
+        }
+
+        public Customer()
+        {
+
+        }
         [BsonElement("username")]
         public string UserName { get; set; }
 
@@ -28,7 +42,23 @@ namespace ParkingService.Models
         public string Photo { get; set; }
         [BsonElement("password")]
         public string Password { get; set; }
-        
 
+    }
+
+    public class CustomerDetails : Customer
+    {
+        public List<Slot> BookingDetails;
+
+        public CustomerDetails(Customer customerDetails,List<Slot> bookingDetails)
+            :base(customerDetails)
+        {
+            BookingDetails = bookingDetails;
+        }
+
+        public CustomerDetails()
+            :base()
+        {
+
+        }
     }
 }

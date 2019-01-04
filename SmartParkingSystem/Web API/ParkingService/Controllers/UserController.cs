@@ -19,10 +19,18 @@ namespace ParkingService.Controllers
             {                
                 if (!string.IsNullOrEmpty(username) && !string.IsNullOrEmpty(password))
                 {
+                    CustomerDetails customerDetails = new CustomerDetails();
                     var query = Query.And(Query.EQ("username", username), Query.EQ("password", password));
                     var objCustomer = MongoDBHelper.SearchByQueryObject<Customer>(query, "Customer");
+                    if (objCustomer != null)
+                    {
+                        //Go and check if there are any parking Booked
+                            customerDetails = new CustomerDetails(objCustomer, 
+                                MongoDBHelper.GetEntityList<Slot>().FindAll(i => i.SlotStatus != "Empty" && i.cust_id == objCustomer._id));
+                    }
+
                     objResponse.Status = objCustomer != null ? 0 : 2;
-                    objResponse.classobject = objCustomer;
+                    objResponse.classobject = customerDetails;
                 }
             }
             catch (System.Exception)

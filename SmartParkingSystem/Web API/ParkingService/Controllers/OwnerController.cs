@@ -12,10 +12,11 @@ using ParkingService.Models;
 namespace ParkingService.Controllers
 {
     //[Produces("application/json")]
-    [Route("api/Owner")]
+    
     public class OwnerController : Controller
     {
-        [HttpGet(Name = "Auth")]
+        [HttpGet]
+        [Route("api/Owner")]
         public string Authenticate(string username, string password)
         {
             Owner ownerResponse = new Owner();
@@ -36,5 +37,36 @@ namespace ParkingService.Controllers
             }
             return JsonConvert.SerializeObject(ownerResponse);
         }
+
+        [Route("api/GetAllOwners")]
+        public string GetAllOwners()
+        {
+            List<Owner> ownerList = MongoDBHelper.GetEntityList<Owner>();
+            List<CarPark> carParkList = MongoDBHelper.GetEntityList<CarPark>();
+            var result = from c in carParkList
+                         join o in ownerList on c.OwnerID equals o._id
+                         select new
+                         {
+                             c.name,
+                             c.OwnerID
+                         };
+
+            List<Owner> oList = new List<Owner>();
+            foreach(var row1 in result)
+            {
+                foreach(var row2 in ownerList)
+                {
+                    if(row1.OwnerID == row2._id)
+                    {
+                        row2.OwnedParkingSpace = row1.name;
+                        oList.Add(row2);
+                    }
+                }
+            }
+
+            var json = JsonConvert.SerializeObject(oList);
+            return json;
+        }
     }
+    
 }

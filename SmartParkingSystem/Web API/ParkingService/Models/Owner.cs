@@ -27,5 +27,6 @@ namespace ParkingService.Models
         public string Photo { get; set; }
         [BsonElement("owner_type")]
         public string OwnerType { get; set; }
+        public string OwnedParkingSpace { get; set; }
     }
 }

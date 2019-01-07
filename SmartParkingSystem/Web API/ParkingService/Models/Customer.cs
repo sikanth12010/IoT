@@ -48,7 +48,7 @@ namespace ParkingService.Models
     public class CustomerDetails : Customer
     {
         public List<Slot> BookingDetails;
-
+        
         public CustomerDetails(Customer customerDetails,List<Slot> bookingDetails)
             :base(customerDetails)
         {

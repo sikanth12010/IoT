@@ -106,29 +106,38 @@ namespace ParkingService.Controllers
         {
             //Update carpark location
             AuthResponse objResponse = new AuthResponse();
-            objResponse.Status = 2;
+            objResponse.Status = 2;                         //Success
             try
             { 
                 CarPark location = MongoDBHelper.SearchByObjectID<CarPark>(value.car_park_id);
                 if (location != null)
                 {
-                    location.aspaces = location.aspaces - 1;
-                    MongoDBHelper.InsertEntity<CarPark>(location);
+                    if (location.aspaces > 0 && location.aspaces < location.tspaces)
+                    {
+                        var query = Query.And(Query.EQ("car_park_id", value.car_park_id), Query.EQ("slot_status", "Empty"));
+                        Slot slot = MongoDBHelper.SearchByQueryObject<Slot>(query, "Slot");
+                        //Slot slot = MongoDBHelper.GetEntityList
+                        if (slot != null)
+                        {
+                            slot.SlotStatus = "Booked";
+                            slot.loc = location.name;
+                            objResponse.classobject = slot;
+                            MongoDBHelper.InsertEntity<Slot>(slot);
+
+                            location.aspaces = location.aspaces - 1;
+                            MongoDBHelper.InsertEntity<CarPark>(location);
+                        }
+                        else
+                            objResponse.Status = 3;          //No slots available
+                    }
+                    else
+                    {
+                        objResponse.Status = 3;     //No Available Slots
+                    }
+                    
                 }
 
-                var query = Query.And(Query.EQ("car_park_id", value.car_park_id), Query.EQ("slot_status", "Empty"));
-                Slot slot = MongoDBHelper.SearchByQueryObject<Slot>(query, "Slot");
-                //Slot slot = MongoDBHelper.GetEntityList
-                if (slot != null)
-                {
-                    objResponse.classobject = slot;
-                    slot.SlotStatus = "Booked";
-                   // slot.SlotNumber = value.SlotNumber;
-                    MongoDBHelper.InsertEntity<Slot>(slot);
-                }
-                else
-                    //No slot available
-                    objResponse.Status = 3;
+                
             }
             catch(System.Exception)
             {

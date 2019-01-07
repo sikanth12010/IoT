@@ -26,10 +26,13 @@ namespace ParkingService.Controllers
                     {
                         //Go and check if there are any parking Booked
                             customerDetails = new CustomerDetails(objCustomer, 
-                                MongoDBHelper.GetEntityList<Slot>().FindAll(i => i.SlotStatus != "Empty" && i.cust_id == objCustomer._id));
+                            MongoDBHelper.GetEntityList<Slot>().FindAll(i => i.SlotStatus != "Empty" && i.cust_id == objCustomer._id)); 
+                        
                     }
-
-                    objResponse.Status = objCustomer != null ? 0 : 2;
+                    
+                    
+                    // objResponse.Status = objCustomer != null ? 0 : 2;
+                    objResponse.Status = customerDetails != null ? 0 : 2; 
                     objResponse.classobject = customerDetails;
                 }
             }

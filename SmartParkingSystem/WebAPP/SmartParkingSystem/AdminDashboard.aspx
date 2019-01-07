@@ -30,7 +30,7 @@
     
     <div class="row">
         <div id="DivSuperAdmin" runat="server" visible="false">
-            <a href="#" class="col-md-2 jumbotron" style="border-radius: 25px;">
+            <a href="ManageUsers.aspx" class="col-md-2 slots parkslots" style="border-radius: 30px;">
                 <br />
                 <h4>Manage Owners
                 </h4>

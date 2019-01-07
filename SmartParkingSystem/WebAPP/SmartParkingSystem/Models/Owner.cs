@@ -7,6 +7,7 @@ namespace SmartParkingSystem.Models
 {
     public class Owner
     {
+        public string _Id { get; set; }
         public int Status { get; set; }
         public string UserName { get; set; }
         public string FirstName { get; set; }
@@ -18,5 +19,6 @@ namespace SmartParkingSystem.Models
         public string Photo { get; set; }
         public string Password { get; set; }
         public string OwnerType { get; set; }
+        public string OwnedParkingSpace { get; set; }
     }
 }

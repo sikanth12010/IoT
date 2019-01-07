@@ -61,6 +61,13 @@ namespace ParkingService.Models
             var entity = DB.GetCollection<T>(entityName).FindOne(mongoQuery);
             return entity as T;
         }
+        public static List<T> SearchByQuery<T>(IMongoQuery mongoQuery, string entityName) where T : Entity
+        {
+            //var entity = DB.GetCollection<T>(entityName).Find(mongoQuery);
+            var collection = DB.GetCollection<T>(entityName).Find(mongoQuery);
+            return collection.AsQueryable().ToList<T>();
+            //return entity as T;
+        }
 
         public async static Task<string> FindCollectionByFilterAsync<T>(FilterDefinition<T> mongoQuery) where T : Entity
         {

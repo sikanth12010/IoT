@@ -1,11 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
+//using System.Threading.Tasks;
 using MongoDB.Bson.Serialization.Attributes;
 
 namespace ParkingService.Models
 {
+    //public abstract class Entity
+    //{
+    //    [BsonRepresentation(MongoDB.Bson.BsonType.ObjectId)]
+    //    public string _id { set; get; }
+    //}
+
     public class Owner : Entity
     {
         public int Status { get; set; }

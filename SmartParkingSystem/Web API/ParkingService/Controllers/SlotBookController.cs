@@ -123,7 +123,7 @@ namespace ParkingService.Controllers
                 {
                     objResponse.classobject = slot;
                     slot.SlotStatus = "Booked";
-                    slot.SlotNumber = value.SlotNumber;
+                   // slot.SlotNumber = value.SlotNumber;
                     MongoDBHelper.InsertEntity<Slot>(slot);
                 }
                 else

@@ -74,7 +74,7 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav" runat="server" id="NavBarUl">
-                        <li><a runat="server" href="~/AdminDashboard">Home</a></li>
+                        <li><a runat="server" onserverclick="HomeBtn_CLick">Home</a></li>
                         <li><a runat="server" href="~/About">About</a></li>
                         <li><a runat="server" href="~/Contact">Contact</a></li>
                     </ul>

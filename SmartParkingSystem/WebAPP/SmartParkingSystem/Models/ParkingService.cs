@@ -38,13 +38,42 @@ namespace SmartParkingSystem.Models
             return owner; */
         }
 
-        public List<CarPark> GetAllParkingSpacesOfOwnerFromAPI(string ownerId)
+        public List<Owner> GetOwnerListFromAPI()
         {
-            List<CarPark> parkingSpacesList = new List<CarPark>();
+            List<Owner> ownerList = new List<Owner>();
             using (var client = new HttpClient())
             {
                 client.BaseAddress = new Uri(url);
-                var responseTask = client.GetAsync("api/Location/GetAll");
+                var responseTask = client.GetAsync("api/GetAllOwners");
+                responseTask.Wait();
+                var result = responseTask.Result;
+                if (result != null && result.IsSuccessStatusCode)
+                {
+                    var readTask = result.Content.ReadAsStringAsync().Result;
+                    //readTask.Wait();
+                    ownerList = JsonConvert.DeserializeObject<List<Owner>>(readTask);
+                    return ownerList;
+                }
+            }
+            return null;
+        }
+
+        public List<CarPark> GetAllParkingSpacesOfOwnerFromAPI(string ownerId)
+        {
+            List<CarPark> parkingSpacesList = new List<CarPark>();
+            string routeurl = string.Empty;
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri(url);
+                if (ownerId == string.Empty)
+                {
+                    routeurl = "api/Location/GetAll";
+                }
+                else
+                {
+                    routeurl = string.Format("api/Location/GetByOwnerId?owner_id={0}",ownerId);
+                }
+                var responseTask = client.GetAsync(routeurl);
                 responseTask.Wait();
                 var result = responseTask.Result;
                 if (result != null && result.IsSuccessStatusCode)
@@ -100,7 +129,7 @@ namespace SmartParkingSystem.Models
             carpark._Id      = parkingSpaceDetailsList[Int32.Parse(parkingSpaceId)]._Id;
             carpark.Tspaces = parkingSpaceDetailsList[Int32.Parse(parkingSpaceId)].Tspaces;
             carpark.Aspaces = parkingSpaceDetailsList[Int32.Parse(parkingSpaceId)].Aspaces;
-            carpark.Ospaces = carpark.Tspaces - carpark.Aspaces;
+           // carpark.Ospaces = carpark.Tspaces - carpark.Aspaces;  
             return carpark;  
             
         }

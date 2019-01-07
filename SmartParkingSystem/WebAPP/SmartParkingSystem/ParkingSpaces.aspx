@@ -87,7 +87,7 @@
                     </a>
                 </div>
                 <div class="row">
-                    <asp:GridView ID="ParkingDetailsGrid" runat="server" AutoGenerateColumns="false" Width="80%" HeaderStyle-BackColor="Wheat" AlternatingRowStyle-BackColor="WhiteSmoke"
+                    <asp:GridView ID="ParkingDetailsGrid" runat="server" AutoGenerateColumns="false" Width="80%" HeaderStyle-BackColor="#5e5e5e" HeaderStyle-ForeColor="#f8f8f8" AlternatingRowStyle-BackColor="WhiteSmoke"
                         AllowPaging="true" PageSize="10" OnPageIndexChanging="ParkingDetailsGrid_PageIndexChanging">
                         <Columns>
                             <asp:BoundField HeaderText="Slot Number" DataField="SlotNumber" />

@@ -76,6 +76,7 @@ namespace SmartParkingSystem
                     Owner owner = Session["LoggedInUser"] as Owner;
                     ManageLbl.Text = string.Format(ManageLbl.Text, owner.FirstName);
                 }
+                
                 if (!String.IsNullOrEmpty(this.Page.Title)
                     && (
                             this.Page.Title.Equals("Login") ||
@@ -92,9 +93,21 @@ namespace SmartParkingSystem
                     ProfileImg.Visible = false;
                     LogoutLnkBtn.Visible = false;                    
                 }
+                else if(Session["LoggedInUser"] == null)
+                {
+                    Response.Redirect("~/Account/Login");
+                }
+          
             }
         }
-       
+
+        protected void HomeBtn_CLick(object sender, EventArgs e)
+        {
+            Owner owner = new Owner();
+            owner = (Owner)Session["LoggedInUser"];
+            Response.Redirect("~/AdminDashboard?OwnerType=" + owner.OwnerType);
+        }
+
         protected void LogoutLnkBtn_Click(object sender, EventArgs e)
         {
             Session["LoggedInUser"] = null;

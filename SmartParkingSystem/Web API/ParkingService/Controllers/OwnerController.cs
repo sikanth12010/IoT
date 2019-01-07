@@ -25,7 +25,6 @@ namespace ParkingService.Controllers
             {
                 if (!string.IsNullOrEmpty(username) && !string.IsNullOrEmpty(password))
                 {
-
                     var OwnerList = MongoDBHelper.GetEntityList<Owner>();
                     ownerResponse = OwnerList.Find(x => x.UserName == username && x.Password == password);
                     ownerResponse.Status = ownerResponse != null ? 0 : 2;

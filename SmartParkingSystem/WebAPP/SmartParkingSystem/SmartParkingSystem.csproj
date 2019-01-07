@@ -189,12 +189,16 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Properties\PublishProfiles\ParkSmartly - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\ParkSmartly - Web Deploy1.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Images\About.png" />
     <Content Include="Images\NoProfile.PNG" />
     <Content Include="Images\Logo.png" />
     <Content Include="Images\Reports.png" />
     <Content Include="Logo.ico" />
+    <Content Include="ManageUsers.aspx" />
     <Content Include="ParkingSlots.aspx" />
     <Content Include="ParkingSpaces.aspx" />
     <Content Include="Reports.aspx" />
@@ -300,6 +304,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="ManageUsers.aspx.cs">
+      <DependentUpon>ManageUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageUsers.aspx.designer.cs">
+      <DependentUpon>ManageUsers.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\CarPark.cs" />
     <Compile Include="Models\Owner.cs" />

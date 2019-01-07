@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MongoDB.Bson;
 using MongoDB.Driver;
+using MongoDB.Driver.Builders;
 using Newtonsoft.Json;
 using ParkingService.Models;
 
@@ -23,6 +24,15 @@ namespace ParkingService.Controllers
         {           
             List<CarPark> aList = MongoDBHelper.GetEntityList<CarPark>();
             var json = JsonConvert.SerializeObject(aList);
+            return json;
+        }
+        [HttpGet]
+        [Route("api/Location/GetByOwnerId")]
+        public string GetByOwnerId(string owner_id)
+        {
+           List<CarPark> ParkingSpace = MongoDBHelper.SearchByQuery<CarPark>(Query.EQ("owner_id", owner_id), "CarPark");
+           // List<CarPark> aList = MongoDBHelper.GetEntityList<CarPark>();
+            var json = JsonConvert.SerializeObject(ParkingSpace);
             return json;
         }
         [HttpGet]
